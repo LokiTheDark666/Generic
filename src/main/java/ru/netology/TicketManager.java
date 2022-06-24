@@ -1,5 +1,4 @@
 package ru.netology;
-import java.security.PublicKey;
 import java.util.Arrays;
 
 public class TicketManager {
@@ -11,10 +10,10 @@ public class TicketManager {
         this.repository = repository;
     }
 
-    public Tickets[] findAllByFromTo(String from, String to) {
+    public Tickets[] findAllByFromArrival(String sanding, String arrival) {
         Tickets[] ans = new Tickets[0];
         for (Tickets tickets : repository.findAll()) {
-            if (tickets.getSending() == from && tickets.getArrival() == to) {
+            if (tickets.getSending() == sanding && tickets.getArrival() == arrival) {
                 Tickets[] tmp = new Tickets[ans.length + 1];
                 for (int i = 0; i < ans.length; i++) {
                     tmp[i] = ans[i];
